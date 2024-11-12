@@ -1,5 +1,7 @@
 # McDiffy Ecommerce Web Application
 
+This is a Spring-Boot backend Web Application that uses Spring-Boot, Spring-Data-JPA, Spring-Web and H2 database that will perform CRUD operations on the required database depending upon the API request as per the below provided problem statement.
+
 The problem statement for the below application can be found in this pdf file. The same is placed in the extradocs folder.
 
 
