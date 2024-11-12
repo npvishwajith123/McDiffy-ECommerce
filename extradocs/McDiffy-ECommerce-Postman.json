@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "8a0ad368-0e99-423d-a916-454d02774c0d",
+		"name": "McDiffy - ECommerce - Spring Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22928894"
+	},
+	"item": [
+		{
+			"name": "Public - Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"glaxo\",\r\n    \"password\":\"pass_word\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api/public/login",
+					"path": [
+						"api",
+						"public",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Public - Get All Products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "/api/public/product/search?keyword=tablet",
+					"path": [
+						"api",
+						"public",
+						"product",
+						"search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "tablet"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer - Get Cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{JACK_CONSUMER_JWT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "/api/auth/consumer/cart",
+					"path": [
+						"api",
+						"auth",
+						"consumer",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer - Add to cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{JACK_CONSUMER_JWT}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 3,\r\n    \"category\": {\r\n        \"categoryName\": \"Electronics\",\r\n        \"categoryId\": \"2\"\r\n    },\r\n    \"price\": \"98000.0\",\r\n    \"productName\": \"iPhone 12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api/auth/consumer/cart",
+					"path": [
+						"api",
+						"auth",
+						"consumer",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer - Put cart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{JACK_CONSUMER_JWT}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": {\r\n        \"productId\": 3,\r\n        \"category\": {\r\n            \"categoryName\": \"Electronics\",\r\n            \"categoryId\": \"2\"\r\n        },\r\n        \"price\": \"98000.0\",\r\n        \"productName\": \"iPhone 12\"\r\n    },\r\n    \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api/auth/consumer/cart",
+					"path": [
+						"api",
+						"auth",
+						"consumer",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consumer - Delete from Cart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{JACK_CONSUMER_JWT}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 3,\r\n    \"category\": {\r\n        \"categoryName\": \"Electronics\",\r\n        \"categoryId\": \"2\"\r\n    },\r\n    \"price\": \"98000.0\",\r\n    \"productName\": \"iPhone 12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api/auth/consumer/cart",
+					"path": [
+						"api",
+						"auth",
+						"consumer",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller - Get Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{GLAXO_SELLER_JWT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "/api/auth/seller/product",
+					"path": [
+						"api",
+						"auth",
+						"seller",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller - Get Single Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{GLAXO_SELLER_JWT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "/api/auth/seller/product/2",
+					"path": [
+						"api",
+						"auth",
+						"seller",
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller - Add Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{APPLE_SELLER_JWT}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 3,\r\n    \"category\": {\r\n        \"categoryName\": \"Electronics\",\r\n        \"categoryId\": \"2\"\r\n    },\r\n    \"price\": \"98000.0\",\r\n    \"productName\": \"iPhone 12 Pro  Max\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api/auth/seller/product",
+					"path": [
+						"api",
+						"auth",
+						"seller",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller - Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{APPLE_SELLER_JWT}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 3,\r\n    \"category\": {\r\n        \"categoryName\": \"Electronics\",\r\n        \"categoryId\": \"2\"\r\n    },\r\n    \"price\": \"98000.0\",\r\n    \"productName\": \"iPhone 12 Pro  Max\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api/auth/seller/product",
+					"path": [
+						"api",
+						"auth",
+						"seller",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seller - Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "JWT",
+						"value": "{{APPLE_SELLER_JWT}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "/api/auth/seller/product/3",
+					"path": [
+						"api",
+						"auth",
+						"seller",
+						"product",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.request.url.protocol=\"http\"\r",
+					"pm.request.url.host=\"localhost\"\r",
+					"pm.request.url.port=\"8080\""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "JACK_CONSUMER_JWT",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "BOB_CONSUMER_JWT",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "APPLE_SELLER_JWT",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "GLAXO_SELLER_JWT",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
