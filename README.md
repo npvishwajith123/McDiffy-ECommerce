@@ -5,12 +5,12 @@ This is a Spring-Boot backend Web Application that uses Spring-Boot, Spring-Data
 The problem statement for the below application can be found in this pdf file. The same is placed in the extradocs folder.
 
 
-[McDiffy-ECommerce Problem Statement PDF](/extradocs/McDiffy-ECommerce.pdf)
+[McDiffy-ECommerce Problem Statement PDF](extradocs/McDiffy-ECommerce.pdf)
 
 The test class contains the Junit Tests for testing the endpoints in the controller classes.
 
 Also attached the postman suite with all the endpoints configured along with test data.
 
-[McDiffy-ECommerce Postman Suite](/extradocs/extradocs/McDiffy-ECommerce-Postman.json)
+[McDiffy-ECommerce Postman Suite](extradocs/McDiffy-ECommerce-Postman.json)
 
 Upon starting the application, the application will run on [<u>localhost:8080</u>](http://localhost:8080/)
